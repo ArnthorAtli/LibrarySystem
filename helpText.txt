@@ -1,0 +1,23 @@
+NOTE
+Every command and argument has to begin with " - "
+
+-addBook -title -author //adds a book to the Library
+//you can have many authors just remember the name has to begin with " - "
+
+-addStudent -name -feeIsPaid //adds a student to the Library
+//feeIsPaid has to be -true or -false
+
+-addFacultyMember -name -department //adds a faculty member to the Library
+
+-findBook -title //checks if book is available in the Library
+
+-findUser -name //checks if "name" is a user in the Library
+
+-borrowBook -user -title //user borrows the book title
+
+-extendLending -user -title -newDueDate //extends the lending of the book "title"
+//newDueDate has the format "-dd-MM-yyyy"
+
+-returnBook -user -title //user returns the book "title"
+
+-status //shows the status of the Library
