@@ -1,11 +1,6 @@
 package is.hi.hbv202g.assignmentFinal;
 
 public class Reader {
-    //List of all the commands
-    private final String[] listOfCommands =
-            {"help", "addBook", "addStudent", "addFacultyMember","findBook",
-    "findUser","borrowBook","extendLending","returnBook","status","quit"};
-
     private final PrintStatements print = new PrintStatements();
 
     public String[] readInput(String input) {
@@ -20,19 +15,14 @@ public class Reader {
         }
 
         String command = commandAndRest[0];
-        //check if command is legal
-        for (String c : listOfCommands) {
-            if (command.equals(c)) {
-                //check if arguments are legal
-                if(argsLegal(command,commandAndRest)){
-                    return commandAndRest;
-                }
-            }
-        }
+        //check if command and arguments are legal
+       if(isLegal(command,commandAndRest)){
+           return commandAndRest;
+       }
 
         return null;
     }
-    private boolean argsLegal(String command,String[]comAndArgs){
+    private boolean isLegal(String command,String[]comAndArgs){
         int numOfArgs = comAndArgs.length-1;
         return switch (command) {
             case "help","status","quit" -> {
@@ -90,7 +80,10 @@ public class Reader {
                 }
                 yield true;
             }
-            default -> false;
+            default -> {
+                print.commandNotFound();
+                yield false;
+            }
         };
     }
 

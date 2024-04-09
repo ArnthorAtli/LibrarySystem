@@ -5,16 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-/**
- * Hello world!
- */
+
 public class Main {
-    private static boolean active = true;
 
     //create a librarySystem
     public static void main(String[] args) throws FileNotFoundException, UserOrBookDoesNotExistException {
         //create a Scanner to read input from the user
         Scanner input = new Scanner(System.in);
+        boolean active = true;
 
         //create a class that contains all the text messages
         PrintStatements print = new PrintStatements();
@@ -28,13 +26,11 @@ public class Main {
         //keep the user interface active until the user quits
         while (active) {
             //read the input and split it at every -
+            //the reader detect if the command or arguments are not legal and lets the user know
             String[] commandsAndArgs = reader.readInput(input.nextLine());
-            //if command is not legal we let the user know
-            if (commandsAndArgs == null) {
 
-            }
-            //else we find the command and execute it
-            else {
+            //if the command and arguments are legal we find the command and execute it
+            if(commandsAndArgs!=null) {
                 String command = commandsAndArgs[0];
                 switch (command) {
                     //-help command prints out instructions on how the commands work
@@ -52,7 +48,6 @@ public class Main {
                         }
                         //if the book has a list of authors
                         else {
-                            //make a list of the authors
                             List<Author> authors = new ArrayList<>();
                             for (int w = 2; w < commandsAndArgs.length; w++) {
                                 authors.add(new Author(commandsAndArgs[w]));
@@ -60,7 +55,6 @@ public class Main {
                             myLibrarySystem.addBookWithTitleAndAuthorList(commandsAndArgs[1], authors);
                             print.addBookWithTitleAndAuthorListText(commandsAndArgs[1], authors);
                         }
-
                         break;
 
                     /*we have to break addStudent into 3 cases:
@@ -142,7 +136,6 @@ public class Main {
                         else{
                             print.bookIsNotBeingBorrowed(bookToBeReturned.getTitle());
                         }
-
                         break;
                     case "status":
                         print.status(myLibrarySystem);
