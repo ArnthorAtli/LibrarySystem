@@ -8,7 +8,8 @@ import java.util.Scanner;
 
 public class PrintStatements {
 
-    //text that welcomes the user
+
+    // text that welcomes the user
     public void welcomeText() {
         System.out.println("Welcome to the library, at the moment we are completely empty");
         System.out.println("If you need any help, please type -help");
@@ -34,6 +35,7 @@ public class PrintStatements {
     public void addBookWithTitleAndNameOfSingleAuthorText(String title, String author) {
         System.out.println("The book " + title + " after " + author + " was added in the Library");
     }
+
 
     public void addBookWithTitleAndAuthorListText(String title, List<Author> listOfAuthors) {
         StringBuilder authors = new StringBuilder();

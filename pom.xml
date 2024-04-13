@@ -4,11 +4,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>is.hi.hbv202g.assignment8</groupId>
-    <artifactId>Assignment8</artifactId>
+    <groupId>is.hi.hbv202g.assignmentFinal</groupId>
+    <artifactId>AssignmentFinal</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>HBV202G Assignment8</name>
+    <name>HBV202G AssignmentFinal</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -32,12 +32,12 @@
     <build>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
-                <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
+
                 <plugin>
                     <artifactId>maven-clean-plugin</artifactId>
                     <version>3.3.2</version>
                 </plugin>
-                <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
+
                 <plugin>
                     <artifactId>maven-resources-plugin</artifactId>
                     <version>3.3.1</version>
@@ -62,7 +62,7 @@
                     <artifactId>maven-deploy-plugin</artifactId>
                     <version>3.1.1</version>
                 </plugin>
-                <!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
+
                 <plugin>
                     <artifactId>maven-site-plugin</artifactId>
                     <version>3.11.0</version>
@@ -79,7 +79,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.2.0</version>
                 <configuration>
-                    <mainClass>is.hi.hbv202g.assignment8.Main</mainClass>
+                    <mainClass>is.hi.hbv202g.assignmentFinal.Main</mainClass>
                 </configuration>
             </plugin>
         </plugins>
