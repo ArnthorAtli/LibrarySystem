@@ -7,9 +7,14 @@
     <groupId>is.hi.hbv202g.assignmentFinal</groupId>
     <artifactId>AssignmentFinal</artifactId>
     <version>1.0-SNAPSHOT</version>
-
     <name>HBV202G AssignmentFinal</name>
 
+    <licenses>
+        <license>
+            <name>MIT</name>
+            <url>./LICENSE</url>
+        </license>
+    </licenses>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- We define here our own variable "java.version" so that we need to adjust it only in the next line and all other lines can use it then -->
@@ -30,7 +35,7 @@
     </dependencies>
 
     <build>
-        <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+        <pluginManagement>
             <plugins>
 
                 <plugin>
