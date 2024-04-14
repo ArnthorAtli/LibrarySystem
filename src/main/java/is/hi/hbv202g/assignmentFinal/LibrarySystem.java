@@ -11,18 +11,31 @@ public class LibrarySystem {
 
     private ArrayList<Lending> lendings;
 
+    private ArrayList<Collection> collections;
+
     public LibrarySystem() {
         this.books = new ArrayList<>();
         this.users = new ArrayList<>();
         this.lendings = new ArrayList<>();
+        this.collections = new ArrayList<>();
     }
 
+    /**
+     * adds a book with a single author
+     * @param  title title of the book
+     * @param  authorName name of the author
+     */
     public void addBookWithTitleAndNameOfSingleAuthor(String title, String authorName) {
         Author author = new Author(authorName);
         Book book = new Book(title, author.getName());
         books.add(book);
     }
 
+    /**
+     * adds a book with a list of authors
+     * @param  title title of the book
+     * @param  authors list of the authors
+     */
     public void addBookWithTitleAndAuthorList(String title, List<Author> authors) {
         Book book = null;
         try {
@@ -62,7 +75,7 @@ public class LibrarySystem {
         return null;
     }
 
-    public String borrowBook(User user, Book book) throws UserOrBookDoesNotExistException {
+    public String borrowBook(User user, Book book){
         for(Lending e:lendings){
             if(e.getBook().equals(book)){
                 return "beingBorrowed";
@@ -72,6 +85,7 @@ public class LibrarySystem {
             if(w.equals(book)){
                 Lending lend = new Lending(book,user);
                 lendings.add(lend);
+                book.setBeingBorrowed(true);
                 return "available";
             }
         }
@@ -97,19 +111,86 @@ public class LibrarySystem {
 
         for (Lending w : lendings) {
             if (w.getUser().equals(user) && w.getBook().equals(book)) {
+                book.setBeingBorrowed(false);
                 lendings.remove(w);
                 return true; // Once found, no need to continue the loop
             }
         }
         return false;
     }
+    /**
+     * @return list of books
+     */
     public ArrayList<Book> getBooks(){
         return books;
     }
+    /**
+     * @return list of users
+     */
     public ArrayList<User> getUsers(){
         return users;
     }
+    /**
+     * @return list of lendings
+     */
     public ArrayList<Lending> getLendings(){
         return lendings;
+    }
+
+    /**
+     * @return list of collections
+     */
+    public ArrayList<Collection> getCollections(){
+        return collections;
+    }
+
+    /**
+     * Adds a collection of books with the same author
+     * @param titles list of book titles
+     * @param author name of author
+     * @param nameOfCollection the name of the collection
+     */
+    public void addCollectionOfBooksWithSingleAuthor(String nameOfCollection,List<String> titles, Author author){
+        Collection collection = new Collection(nameOfCollection);
+        for(String title: titles){
+            addBookWithTitleAndNameOfSingleAuthor(title, author.getName());
+            collection.addBook(findBookByTitle(title));
+        }
+        collections.add(collection);
+    }
+    /**
+     * Adds a collection of books with the same authors
+     * @param titles list of book titles
+     * @param authors name of authors
+     * @param nameOfCollection the name of the collection
+     */
+    public void addCollectionOfBooksWithListOfAuthors(String nameOfCollection,List<String> titles, List<Author> authors){
+        Collection collection = new Collection(nameOfCollection);
+        for(String title: titles){
+            addBookWithTitleAndAuthorList(title, authors);
+            collection.addBook(findBookByTitle(title));
+        }
+        collections.add(collection);
+    }
+
+    /**
+     * @param user name of the user that is borrowing
+     * @param nameOfCollection name of the collection
+     * @return a string that says if the collection exists or if it is avalible or not
+     */
+    public String borrowCollection(User user, String nameOfCollection){
+        //check if collection is in the library
+        for(Collection collection:collections){
+            if(nameOfCollection.equals(collection.getNameOfCollection())){
+                //check if every book in the collection is available to borrow
+                for(Book book:collection.getBookCollection()){
+                    if(book.isBeingBorrowed()) return "notAllAvailable";
+                }
+                //if the collection is available we borrow each book in the collection
+                for(Book book:collection.getBookCollection()){borrowBook(user,book);}
+                return "CollectionAvailable";
+            }
+        }
+        return "CollectionDoesNotExist";
     }
 }

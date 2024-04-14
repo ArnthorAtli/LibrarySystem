@@ -83,7 +83,7 @@ public class Reader {
                 }
                 yield true;
             }
-            case "borrowBook","returnBook" -> {
+            case "borrowBook","returnBook", "borrowCollection" -> {
                 if(numOfArgs!=2){
                     print.notCorrectAmountOfArgs(command);
                     yield false;
@@ -92,6 +92,13 @@ public class Reader {
             }
             case "extendLending" -> {
                 if(numOfArgs!=3){
+                    print.notCorrectAmountOfArgs(command);
+                    yield false;
+                }
+                yield true;
+            }
+            case "addCollection" -> {
+                if(numOfArgs<5){
                     print.notCorrectAmountOfArgs(command);
                     yield false;
                 }

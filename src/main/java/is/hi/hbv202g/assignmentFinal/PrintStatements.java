@@ -103,6 +103,14 @@ public class PrintStatements {
                 System.out.println(type + " takes 3 arguments");
                 System.out.println("Use the command: -extendLending -user -title -newDueDate");
                 break;
+            case("addCollection"):
+                System.out.println(type + " takes the minimum of 5 arguments");
+                System.out.println("Use the command: -addCollection -nameOfCollection -T -title1 -title2... -A -author1 -author2...");
+                break;
+            case("borrowCollection"):
+                System.out.println(type + " takes 2 arguments");
+                System.out.println("Use the command: -borrowCollection -nameOfCollection -user");
+                break;
         }
     }
     //asks user if fee is paid or not
@@ -200,9 +208,13 @@ public class PrintStatements {
     public void bookIsNotBeingBorrowed(String title) {
         System.out.println(title+ " is not being borrowed thus you can't return it");
     }
+    public void addCollectionNotCorrect(){
+        System.out.println("You did not use the -addCollection command right");
+        System.out.println("Please use the command: -addCollection -nameOfCollection -T -title1 -title2... -A -author1 -author2...");
+    }
 
     /**
-     *Shows info about the library system, about the state of books borrowed, users and lendings.
+     *Shows info about the library system, about the state of books , users and lendings.
      * @param librarySystem library system
      */
     public void status(LibrarySystem librarySystem){
@@ -247,5 +259,29 @@ public class PrintStatements {
             System.out.println("**********");
         }
 
+    }
+
+    public void collectionAdded(String nameOfCollection, List<String> titles, List<Author> authors) {
+        System.out.println("The collection "+ nameOfCollection +" was added to the Library");
+        System.out.println("Authors:");
+        for (Author author: authors){
+            System.out.println(author.getName());
+        }
+        System.out.println("Books:");
+        for (String title: titles){
+            System.out.println(title);
+        }
+    }
+
+    public void collectionAvailableToBorrow(String nameOfCollection, String user) {
+        System.out.println(user+" is now borrowing the collection "+ nameOfCollection);
+    }
+
+    public void someBookInCollectionIsBeingBorrowed() {
+        System.out.println("The collection is not available to borrow because not all books are in the library");
+    }
+
+    public void collectionNotFound(String collection) {
+        System.out.println(collection+" is not a collection in the library");
     }
 }

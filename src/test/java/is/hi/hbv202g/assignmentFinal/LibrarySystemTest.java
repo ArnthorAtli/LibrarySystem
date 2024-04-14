@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 /**
  * Unit test for simple Main.
  */
-public class MainTest
+public class LibrarySystemTest
 {
     LibrarySystem librarySystem;
     @Before

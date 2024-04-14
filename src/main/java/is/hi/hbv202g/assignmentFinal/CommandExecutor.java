@@ -2,6 +2,7 @@ package is.hi.hbv202g.assignmentFinal;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class CommandExecutor {
@@ -23,7 +24,7 @@ public class CommandExecutor {
                 try {
                     print.helpText();
                 } catch (FileNotFoundException e) {
-                    throw new RuntimeException(e);
+                    System.out.println("HelpText file not found");
                 }
 
                 return myLibrarySystem;
@@ -94,11 +95,7 @@ public class CommandExecutor {
                  * The book is not in the library  */
                 else {
                     String statusOfBook;
-                    try {
-                        statusOfBook = myLibrarySystem.borrowBook(userToBorrow, bookToBorrow);
-                    } catch (UserOrBookDoesNotExistException e) {
-                        throw new RuntimeException(e);
-                    }
+                    statusOfBook = myLibrarySystem.borrowBook(userToBorrow, bookToBorrow);
                     switch (statusOfBook) {
                         case "available":
                             print.bookAvailableToBorrow(bookToBorrow.getTitle(), userToBorrow.getName());
@@ -133,6 +130,61 @@ public class CommandExecutor {
                     print.bookIsNotBeingBorrowed(bookToBeReturned.getTitle());
                 }
                 return myLibrarySystem;
+
+            case "addCollection":
+                String nameOfCollection = commandsAndArgs[1];
+                List<Author> authors = new ArrayList<>();
+                int authorIndex = 0;
+                if(!commandsAndArgs[2].equals("T")){
+                    print.addCollectionNotCorrect();
+                    return myLibrarySystem;
+                }
+                for(int w =0; w<commandsAndArgs.length;w++){
+                    if(commandsAndArgs[w].equals("A")){
+                        authorIndex = w;
+                    }
+                }
+                if(authorIndex<4){
+                    print.addCollectionNotCorrect();
+                    return myLibrarySystem;
+                }
+                List<String> titles = new ArrayList<>(Arrays.asList(commandsAndArgs).subList(3, authorIndex));
+                for(int w = authorIndex+1;w<commandsAndArgs.length;w++){
+                    authors.add(new Author(commandsAndArgs[w]));
+                }
+                if(authors.size()==1){
+                    myLibrarySystem.addCollectionOfBooksWithSingleAuthor(nameOfCollection,titles,authors.get(0));
+                }
+                else{myLibrarySystem.addCollectionOfBooksWithListOfAuthors(nameOfCollection,titles,authors);}
+                print.collectionAdded(nameOfCollection,titles,authors);
+                return myLibrarySystem;
+
+            case "borrowCollection":
+
+                User userToBorrowCollection = myLibrarySystem.findUserByName(commandsAndArgs[2]);
+                if (userToBorrowCollection == null) {
+                    print.userNotFound(commandsAndArgs[2]);
+                    return myLibrarySystem;
+                }
+                else {
+                    String statusOfCollection = myLibrarySystem.borrowCollection(userToBorrowCollection, commandsAndArgs[1]);
+                    switch (statusOfCollection) {
+                        case "CollectionAvailable":
+                            print.collectionAvailableToBorrow(commandsAndArgs[1], userToBorrowCollection.getName());
+                            return myLibrarySystem;
+                        case "notAllAvailable":
+                            print.someBookInCollectionIsBeingBorrowed();
+                            return myLibrarySystem;
+                        case "CollectionDoesNotExist":
+                            print.collectionNotFound(commandsAndArgs[1]);
+                            return myLibrarySystem;
+                    }
+                }
+                return myLibrarySystem;
+
+
+
+
             case "status":
                 print.status(myLibrarySystem);
                 return myLibrarySystem;

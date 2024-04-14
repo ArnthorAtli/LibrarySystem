@@ -23,8 +23,6 @@ public class Main {
 
         LibrarySystem myLibrarySystem = new LibrarySystem();
 
-        myLibrarySystem.addBookWithTitleAndAuthorList("a",new ArrayList<>());
-
         //welcome the user
         print.welcomeText();
         //keep the user interface active until the user quits

@@ -6,11 +6,14 @@ import java.util.List;
 public class Book {
     private String title;
     private List<Author> authors;
+    private boolean beingBorrowed;
 
     public Book(String title, String authorName) {
         this.title = title;
         this.authors = new ArrayList<>();
         this.authors.add(new Author(authorName));
+        this.beingBorrowed = false;
+
     }
 
     public Book(String title, List<Author> authors) throws EmptyAuthorListException  {
@@ -44,4 +47,9 @@ public class Book {
     public void setTitle(String title) {
         this.title = title;
     }
+    public void setBeingBorrowed(boolean status){
+        this.beingBorrowed = status;
+    }
+    public boolean isBeingBorrowed(){return this.beingBorrowed;}
+
 }

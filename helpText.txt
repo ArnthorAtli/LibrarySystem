@@ -20,4 +20,10 @@ Every command and argument has to begin with " - "
 
 -returnBook -user -title //user returns the book "title"
 
+-addCollection -nameOfCollection -T -title1 -title2... -A -author1 -author2...
+//adds a collection of books to the Library
+//you can have many authors and titles just remember the name has to begin with " - "
+
+-borrowCollection -nameOfCollection -user //borrows the collection
+
 -status //shows the status of the Library
