@@ -15,8 +15,8 @@ Every command and argument has to begin with " - "
 
 -borrowBook -user -title //user borrows the book title
 
--extendLending -user -title -newDueDate //extends the lending of the book "title"
-//newDueDate has the format "-dd-MM-yyyy"
+-extendLending -user -title -daysToAdd //extends the lending of the book "title"
+//daysToAdd has to be a integer greater or equal to 1
 
 -returnBook -user -title //user returns the book "title"
 

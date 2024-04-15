@@ -1,6 +1,7 @@
 package is.hi.hbv202g.assignmentFinal;
 
 import java.io.FileNotFoundException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -109,10 +110,39 @@ public class CommandExecutor {
                     }
                 }
                 return myLibrarySystem;
-
+            //-extendLending -user -title -daysToAdd
             case "extendLending":
-
+                int days;
+                try{
+                    days = Integer.parseInt(commandsAndArgs[3]);
+                }
+                catch (NumberFormatException e){
+                    print.daysNotInt();
+                    return myLibrarySystem;
+                }
+                if(days<=0){
+                    print.daysNotInt();
+                    return myLibrarySystem;
+                }
+                if(myLibrarySystem.findBookByTitle(commandsAndArgs[2])==null){
+                    print.bookNotFound(commandsAndArgs[2]);
+                    return myLibrarySystem;
+                }
+                Book book = myLibrarySystem.findBookByTitle(commandsAndArgs[2]);
+                for(Lending lending:myLibrarySystem.getLendings()){
+                    if((lending.getUser().getName().equals(commandsAndArgs[1]))&&(lending.getBook().equals(book))){
+                        try {
+                            myLibrarySystem.extendLending(lending.getUser(),book, lending.getDueDate().plusDays(days));
+                        } catch (UserOrBookDoesNotExistException e) {
+                            throw new RuntimeException(e);
+                        }
+                        print.exstendedLending();
+                        return myLibrarySystem;
+                    }
+                }
+                print.lendingNotFound();
                 return myLibrarySystem;
+
             //-returnBook -user -title
             case "returnBook":
                 Book bookToBeReturned = myLibrarySystem.findBookByTitle(commandsAndArgs[2]);
@@ -181,10 +211,6 @@ public class CommandExecutor {
                     }
                 }
                 return myLibrarySystem;
-
-
-
-
             case "status":
                 print.status(myLibrarySystem);
                 return myLibrarySystem;

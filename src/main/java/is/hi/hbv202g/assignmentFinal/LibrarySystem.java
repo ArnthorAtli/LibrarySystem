@@ -92,17 +92,17 @@ public class LibrarySystem {
         return "bookDoesNotExist";
     }
 
-    public void extendLending(FacultyMember facultyMember, Book book, LocalDate newDueDate) throws UserOrBookDoesNotExistException {
+    public void extendLending(User user, Book book, LocalDate newDueDate) throws UserOrBookDoesNotExistException {
         boolean lendingFound = false;
         for (Lending w : lendings) {
-            if (w.getUser().equals(facultyMember) && w.getBook().equals(book)) {
+            if (w.getUser().equals(user) && w.getBook().equals(book)) {
                 w.setDueDate(newDueDate);
                 lendingFound = true;
                 break; // Once found, no need to continue the loop
             }
         }
         if (!lendingFound) {
-            throw new UserOrBookDoesNotExistException(facultyMember.getName() + " is not lending " + book.getTitle());
+            throw new UserOrBookDoesNotExistException(user.getName() + " is not lending " + book.getTitle());
         }
     }
 

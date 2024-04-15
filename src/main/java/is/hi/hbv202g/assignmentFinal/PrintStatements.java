@@ -284,4 +284,17 @@ public class PrintStatements {
     public void collectionNotFound(String collection) {
         System.out.println(collection+" is not a collection in the library");
     }
+
+    public void daysNotInt() {
+        System.out.println("-daysToAdd has to be an integer greater or equal to 1");
+        System.out.println("Please use the command: -extendLending -user -title -daysToAdd");
+    }
+
+    public void exstendedLending() {
+        System.out.println("The lending was extended");
+    }
+
+    public void lendingNotFound() {
+        System.out.println("The lending was not found");
+    }
 }
