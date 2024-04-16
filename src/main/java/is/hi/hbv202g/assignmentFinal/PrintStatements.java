@@ -96,7 +96,7 @@ public class PrintStatements {
                 System.out.println(type + " takes 2 arguments");
                 System.out.println("Use the command: -returnBook -user -title");
                 break;
-            case "help", "status", "quit":
+            case "help", "quit", "status":
                 System.out.println("The command " + type + " doesn't take arguments, just type -" + type);
                 break;
             case ("extendLending"):
@@ -113,6 +113,8 @@ public class PrintStatements {
                 break;
         }
     }
+
+
     //asks user if fee is paid or not
     public void feeIsPaidNotBoolean() {
         System.out.println("Please ensure that the feeIsPaid is either true or false");

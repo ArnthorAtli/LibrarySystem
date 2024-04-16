@@ -27,7 +27,6 @@ public class CommandExecutor {
                 } catch (FileNotFoundException e) {
                     System.out.println("HelpText file not found");
                 }
-
                 return myLibrarySystem;
             /*we have to return myLibrarySystem; addBook into 2 cases:
              * The book has one author
