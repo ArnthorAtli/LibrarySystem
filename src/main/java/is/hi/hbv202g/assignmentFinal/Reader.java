@@ -4,9 +4,13 @@ public class Reader {
     private final PrintStatements print = new PrintStatements();
 
     /**
+     * Parses the user input into a command and its corresponding arguments.
+     * The input should start with a hyphen (-) followed by the command and its arguments, each separated by a hyphen.
+     * This method also validates whether the parsed command and arguments are in a legal format.
      *
-     * @param input a String that the user types in
-     * @return an array with the command and arguments, returns null if illegal
+     * @param input a String representing the user's input
+     * @return an array where the first element is the command and the subsequent elements are the arguments;
+     *         returns null if the command is illegal or improperly formatted
      */
     public String[] readInput(String input) {
         //split the input at every -
@@ -35,8 +39,11 @@ public class Reader {
     }
 
     /**
-     * @param comAndArgs the command and the arguments
-     * @return a boolean if the command and arguments are legal
+     * Validates whether the parsed command and its arguments are legal based on predefined rules.
+     * Each command has specific requirements for the number of arguments it accepts.
+     *
+     * @param comAndArgs an array of Strings where the first element is the command and the rest are arguments
+     * @return true if the command and its arguments are legal; false otherwise
      */
     private boolean isLegal(String[]comAndArgs){
         int numOfArgs = comAndArgs.length-1;

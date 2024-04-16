@@ -7,34 +7,38 @@ import java.util.Scanner;
 
 
 public class Main {
-
-    //create a librarySystem
+    /**
+     * The main method that initializes and controls the flow of the library management application.
+     * It sets up necessary classes for handling printing, reading inputs, and executing commands.
+     *
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
-        //create a Scanner to read input from the user
+        //Create a Scanner to read input from the user
         Scanner input = new Scanner(System.in);
         boolean active = true;
 
-        //create a class that contains all the text messages
+        //Create a class that contains all the text messages
         PrintStatements print = new PrintStatements();
-        //create a class that reads the input
+        //Create a class that reads the input
         Reader reader = new Reader();
-        //create a class that executes the commands
+        //Create a class that executes the commands
         CommandExecutor executor = new CommandExecutor();
 
         LibrarySystem myLibrarySystem = new LibrarySystem();
 
-        //welcome the user
+        //Welcome message for the user
         print.welcomeText();
-        //keep the user interface active until the user quits
+        //Keep the user interface active until the user quits
         while (active) {
-            //read the input and split it at every -
-            //the reader detect if the command or arguments are not legal and lets the user know
+            //Read the input and split it at every "-"
+            //The reader detect if the command or arguments are not legal and lets the user know
             String[] commandsAndArgs = reader.readInput(input.nextLine());
 
-            //if the command and arguments are legal we find the command and execute it
+            //If the command and arguments are legal we find the command and execute it
             if (commandsAndArgs != null) {
                 myLibrarySystem = executor.executeCommand(myLibrarySystem, commandsAndArgs);
-                //if the user quits
+                //If the user quits, exit the loop
                 if(myLibrarySystem==null){
                     active=false;
                 }
