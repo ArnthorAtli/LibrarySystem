@@ -12,7 +12,7 @@
     <licenses>
         <license>
             <name>MIT</name>
-            <url>./LICENSE</url>
+            <url>https://spdx.org/licenses/MIT.html</url>
         </license>
     </licenses>
     <properties>
