@@ -8,6 +8,12 @@ public class Collection {
     private List<Book> books;
     private String nameOfCollection;
 
+    /**
+     * Constructs a new Collection with a specified name.
+     * Initializes the list of books as an empty list.
+     *
+     * @param nameOfCollection The name of the book collection.
+     */
     public Collection(String nameOfCollection){
         this.nameOfCollection = nameOfCollection;
         this.books = new ArrayList<>();
