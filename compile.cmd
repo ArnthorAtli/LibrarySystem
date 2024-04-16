@@ -1,0 +1,1 @@
+javac -d bin .\src\main\java\Main.java .\src\main\java\is\hi\hbv202g\assignmentFinal\frontend\*.java .\src\main\java\is\hi\hbv202g\assignmentFinal\backend\*.java

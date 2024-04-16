@@ -2,6 +2,7 @@ package is.hi.hbv202g.assignmentFinal;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import is.hi.hbv202g.assignmentFinal.frontend.Reader;
 
 public class ReaderTest {
 

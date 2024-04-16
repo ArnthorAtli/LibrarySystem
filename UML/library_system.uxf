@@ -5,7 +5,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>195</x>
-      <y>35</y>
+      <y>20</y>
       <w>330</w>
       <h>185</h>
     </coordinates>
@@ -41,7 +41,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>225</x>
-      <y>290</y>
+      <y>275</y>
       <w>150</w>
       <h>90</h>
     </coordinates>
@@ -63,7 +63,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>10</x>
-      <y>305</y>
+      <y>290</y>
       <w>180</w>
       <h>115</h>
     </coordinates>
@@ -90,7 +90,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>15</x>
-      <y>460</y>
+      <y>445</y>
       <w>115</w>
       <h>55</h>
     </coordinates>
@@ -109,7 +109,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>145</x>
-      <y>460</y>
+      <y>445</y>
       <w>170</w>
       <h>55</h>
     </coordinates>
@@ -126,7 +126,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>410</x>
-      <y>310</y>
+      <y>295</y>
       <w>115</w>
       <h>60</h>
     </coordinates>
@@ -145,7 +145,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>320</x>
-      <y>460</y>
+      <y>445</y>
       <w>205</w>
       <h>55</h>
     </coordinates>
@@ -163,7 +163,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>30</x>
-      <y>70</y>
+      <y>55</y>
       <w>155</w>
       <h>35</h>
     </coordinates>
@@ -179,7 +179,7 @@
     <id>Relation</id>
     <coordinates>
       <x>480</x>
-      <y>365</y>
+      <y>350</y>
       <w>15</w>
       <h>105</h>
     </coordinates>
@@ -190,7 +190,7 @@
     <id>Relation</id>
     <coordinates>
       <x>225</x>
-      <y>365</y>
+      <y>350</y>
       <w>225</w>
       <h>105</h>
     </coordinates>
@@ -201,7 +201,7 @@
     <id>Relation</id>
     <coordinates>
       <x>75</x>
-      <y>415</y>
+      <y>400</y>
       <w>40</w>
       <h>55</h>
     </coordinates>
@@ -214,7 +214,7 @@ authors</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>125</x>
-      <y>215</y>
+      <y>200</y>
       <w>140</w>
       <h>100</h>
     </coordinates>
@@ -226,7 +226,7 @@ m2=0..n</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>185</x>
-      <y>325</y>
+      <y>310</y>
       <w>50</w>
       <h>25</h>
     </coordinates>
@@ -239,7 +239,7 @@ book</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>295</x>
-      <y>215</y>
+      <y>200</y>
       <w>25</w>
       <h>85</h>
     </coordinates>
@@ -251,7 +251,7 @@ m2=0..n</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>460</x>
-      <y>215</y>
+      <y>200</y>
       <w>25</w>
       <h>105</h>
     </coordinates>
@@ -263,7 +263,7 @@ m2=0..n</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>135</x>
-      <y>55</y>
+      <y>40</y>
       <w>70</w>
       <h>25</h>
     </coordinates>
@@ -275,7 +275,7 @@ m2=0..n</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>125</x>
-      <y>100</y>
+      <y>85</y>
       <w>80</w>
       <h>45</h>
     </coordinates>
@@ -287,7 +287,7 @@ m2=0..n</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>85</x>
-      <y>170</y>
+      <y>155</y>
       <w>45</w>
       <h>145</h>
     </coordinates>
@@ -299,7 +299,7 @@ m2=0..n</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>10</x>
-      <y>140</y>
+      <y>125</y>
       <w>185</w>
       <h>35</h>
     </coordinates>
@@ -315,7 +315,7 @@ m2=0..n</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>35</y>
+      <y>20</y>
       <w>105</w>
       <h>15</h>
     </coordinates>
@@ -326,7 +326,7 @@ m2=0..n</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>105</x>
-      <y>290</y>
+      <y>275</y>
       <w>35</w>
       <h>15</h>
     </coordinates>
@@ -338,7 +338,7 @@ style=wordwrap</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>265</x>
-      <y>275</y>
+      <y>260</y>
       <w>45</w>
       <h>15</h>
     </coordinates>
@@ -350,7 +350,7 @@ style=wordwrap</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>440</x>
-      <y>295</y>
+      <y>280</y>
       <w>35</w>
       <h>15</h>
     </coordinates>
@@ -362,7 +362,7 @@ style=wordwrap</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>360</x>
-      <y>225</y>
+      <y>210</y>
       <w>80</w>
       <h>20</h>
     </coordinates>
@@ -374,7 +374,7 @@ style=wordwrap</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>390</x>
-      <y>195</y>
+      <y>180</y>
       <w>40</w>
       <h>40</h>
     </coordinates>
@@ -386,7 +386,7 @@ style=wordwrap</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>350</x>
-      <y>265</y>
+      <y>250</y>
       <w>95</w>
       <h>20</h>
     </coordinates>
@@ -399,7 +399,7 @@ date 30 days from now.
     <id>Relation</id>
     <coordinates>
       <x>350</x>
-      <y>280</y>
+      <y>265</y>
       <w>20</w>
       <h>45</h>
     </coordinates>
@@ -411,7 +411,7 @@ date 30 days from now.
     <id>UMLNote</id>
     <coordinates>
       <x>105</x>
-      <y>35</y>
+      <y>20</y>
       <w>65</w>
       <h>15</h>
     </coordinates>
@@ -423,7 +423,7 @@ date 30 days from now.
     <id>UMLClass</id>
     <coordinates>
       <x>630</x>
-      <y>115</y>
+      <y>100</y>
       <w>160</w>
       <h>45</h>
     </coordinates>
@@ -440,7 +440,7 @@ date 30 days from now.
     <id>UMLClass</id>
     <coordinates>
       <x>540</x>
-      <y>185</y>
+      <y>170</y>
       <w>320</w>
       <h>30</h>
     </coordinates>
@@ -456,7 +456,7 @@ date 30 days from now.
     <id>UMLClass</id>
     <coordinates>
       <x>555</x>
-      <y>235</y>
+      <y>220</y>
       <w>290</w>
       <h>250</h>
     </coordinates>
@@ -499,7 +499,7 @@ date 30 days from now.
     <id>UMLClass</id>
     <coordinates>
       <x>645</x>
-      <y>45</y>
+      <y>30</y>
       <w>125</w>
       <h>25</h>
     </coordinates>
@@ -514,7 +514,7 @@ date 30 days from now.
     <id>Relation</id>
     <coordinates>
       <x>765</x>
-      <y>45</y>
+      <y>30</y>
       <w>175</w>
       <h>215</h>
     </coordinates>
@@ -526,7 +526,7 @@ date 30 days from now.
     <id>Relation</id>
     <coordinates>
       <x>765</x>
-      <y>50</y>
+      <y>35</y>
       <w>55</w>
       <h>80</h>
     </coordinates>
@@ -538,7 +538,7 @@ date 30 days from now.
     <id>Relation</id>
     <coordinates>
       <x>770</x>
-      <y>55</y>
+      <y>40</y>
       <w>120</w>
       <h>155</h>
     </coordinates>
@@ -550,7 +550,7 @@ date 30 days from now.
     <id>Relation</id>
     <coordinates>
       <x>520</x>
-      <y>45</y>
+      <y>30</y>
       <w>130</w>
       <h>20</h>
     </coordinates>
@@ -562,7 +562,7 @@ date 30 days from now.
     <id>Relation</id>
     <coordinates>
       <x>525</x>
-      <y>140</y>
+      <y>125</y>
       <w>110</w>
       <h>115</h>
     </coordinates>
@@ -574,7 +574,7 @@ date 30 days from now.
     <id>Relation</id>
     <coordinates>
       <x>695</x>
-      <y>210</y>
+      <y>195</y>
       <w>15</w>
       <h>35</h>
     </coordinates>
