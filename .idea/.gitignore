@@ -1,6 +1,3 @@
 # Default ignored files
 /shelf/
 /workspace.xml
-# Files to be ignored by Git
-target/
-bin/
