@@ -168,5 +168,45 @@ public class LibrarySystemTest {
         // Verify that no book is added
         assertEquals(0, librarySystem.getBooks().size());
     }
+    @Test
+    public void testGetLendings() {
+        // Add a book and a user, and borrow the book
+        librarySystem.addBookWithTitleAndNameOfSingleAuthor("Book 1", "Author 1");
+        librarySystem.addStudentUser("Alice", true);
+        User user = librarySystem.findUserByName("Alice");
+        Book book = librarySystem.findBookByTitle("Book 1");
+        librarySystem.borrowBook(user, book);
+
+        // Check if lendings contain the borrowing information
+        assertEquals(1, librarySystem.getLendings().size());
+        assertEquals(book, librarySystem.getLendings().get(0).getBook());
+        assertEquals(user, librarySystem.getLendings().get(0).getUser());
+    }
+
+    @Test
+    public void testGetCollections() {
+        // Add a collection to the library
+        List<String> titles = Arrays.asList("Book 1", "Book 2", "Book 3");
+        Author author = new Author("John Doe");
+        librarySystem.addCollectionOfBooksWithSingleAuthor("Collection 1", titles, author);
+
+        // Check if collections contain the added collection
+        assertEquals(1, librarySystem.getCollections().size());
+        assertEquals("Collection 1", librarySystem.getCollections().get(0).getNameOfCollection());
+        assertEquals(titles.size(), librarySystem.getCollections().get(0).getBookCollection().size());
+    }
+
+    @Test
+    public void testAddCollectionOfBooksWithSingleAuthor() {
+        // Add a collection of books with a single author
+        List<String> titles = Arrays.asList("Book 1", "Book 2", "Book 3");
+        Author author = new Author("John Doe");
+        librarySystem.addCollectionOfBooksWithSingleAuthor("Collection 1", titles, author);
+
+        // Check if the collection was added successfully
+        assertEquals(1, librarySystem.getCollections().size());
+        assertEquals("Collection 1", librarySystem.getCollections().get(0).getNameOfCollection());
+        assertEquals(titles.size(), librarySystem.getCollections().get(0).getBookCollection().size());
+    }
 
 }

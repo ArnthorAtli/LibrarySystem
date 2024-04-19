@@ -27,3 +27,5 @@ Every command and argument has to begin with " - "
 -borrowCollection -nameOfCollection -user //borrows the collection
 
 -status //shows the status of the Library
+
+-quit //shuts down the program

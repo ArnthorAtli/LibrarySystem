@@ -1,9 +1,7 @@
 package is.hi.hbv202g.assignmentFinal.backend;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class LibrarySystem {
     private ArrayList<Book> books;

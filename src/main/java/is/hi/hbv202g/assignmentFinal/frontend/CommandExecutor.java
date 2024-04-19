@@ -1,7 +1,6 @@
 package is.hi.hbv202g.assignmentFinal.frontend;
 
 import java.io.FileNotFoundException;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
