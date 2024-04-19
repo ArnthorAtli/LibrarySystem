@@ -1,0 +1,3 @@
+# Ignore (prethe target and bin directories (prevent committing generated files)
+target/
+bin/
